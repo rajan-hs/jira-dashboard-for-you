@@ -15,7 +15,7 @@ function formatDate(dateStr) {
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-export default function TaskRow({ issue, siteUrl }) {
+export default function TaskRow({ issue, siteUrl, rowNum }) {
   const { key, fields } = issue;
   const statusName = fields.status?.name || 'Unknown';
   const priorityName = fields.priority?.name || 'None';
@@ -29,6 +29,7 @@ export default function TaskRow({ issue, siteUrl }) {
 
   return (
     <tr className="task-row">
+      <td className="cell-count">{rowNum}</td>
       <td className="cell-key">
         <a href={issueUrl} target="_blank" rel="noopener noreferrer">
           {key}

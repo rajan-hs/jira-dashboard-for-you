@@ -5,7 +5,7 @@ import FilterBar from './components/FilterBar.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import Pagination from './components/Pagination.jsx';
 import { fetchMyTasks, testConnection } from '../services/jiraApi.js';
-import { getSettings, saveSettings, clearSettings } from '../services/storage.js';
+import { getSettings, saveSettings, clearSettings, getPreferences, savePreferences } from '../services/storage.js';
 
 function OnboardingForm({ onComplete }) {
   const [siteUrl, setSiteUrl] = useState('');
@@ -122,6 +122,8 @@ function OnboardingForm({ onComplete }) {
   );
 }
 
+const DEFAULT_HIDDEN = ['Done', 'Resolved', 'Archived', 'Closed'];
+
 export default function App() {
   const [issues, setIssues] = useState([]);
   const [total, setTotal] = useState(0);
@@ -131,6 +133,16 @@ export default function App() {
   const [error, setError] = useState(null);
   const [configured, setConfigured] = useState(true);
   const [siteUrl, setSiteUrl] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
+  const [hiddenStatuses, setHiddenStatuses] = useState(DEFAULT_HIDDEN);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   const loadTasks = useCallback(async (currentFilters, currentPage) => {
     setLoading(true);
@@ -155,12 +167,36 @@ export default function App() {
     }
     setConfigured(true);
     setSiteUrl(settings.siteUrl.trim().replace(/\/+$/, ''));
+
+    const prefs = await getPreferences();
+    if (prefs.darkMode !== undefined) setDarkMode(prefs.darkMode);
+    if (prefs.hiddenStatuses !== undefined) {
+      setHiddenStatuses(prefs.hiddenStatuses);
+    }
+
     loadTasks({}, 0);
   }, [loadTasks]);
 
   useEffect(() => {
     initDashboard();
   }, [initDashboard]);
+
+  const handlePreferencesChange = async (changes) => {
+    const newDark = changes.darkMode !== undefined ? changes.darkMode : darkMode;
+    const newHidden = changes.hiddenStatuses !== undefined ? changes.hiddenStatuses : hiddenStatuses;
+    if (changes.darkMode !== undefined) setDarkMode(changes.darkMode);
+    if (changes.hiddenStatuses !== undefined) setHiddenStatuses(changes.hiddenStatuses);
+    await savePreferences({ darkMode: newDark, hiddenStatuses: newHidden });
+  };
+
+  const getFilteredIssues = () => {
+    if (!hiddenStatuses || hiddenStatuses.length === 0) return issues;
+    const hidden = hiddenStatuses.map((s) => s.toLowerCase());
+    return issues.filter((issue) => {
+      const status = (issue.fields?.status?.name || '').toLowerCase();
+      return !hidden.includes(status);
+    });
+  };
 
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
@@ -191,9 +227,17 @@ export default function App() {
     return <OnboardingForm onComplete={initDashboard} />;
   }
 
+  const filteredIssues = getFilteredIssues();
+
   return (
     <div className="popup-container">
-      <Header onRefresh={handleRefresh} onLogout={handleLogout} />
+      <Header
+        onRefresh={handleRefresh}
+        onLogout={handleLogout}
+        darkMode={darkMode}
+        hiddenStatuses={hiddenStatuses}
+        onPreferencesChange={handlePreferencesChange}
+      />
       <FilterBar filters={filters} onChange={handleFilterChange} />
       {loading ? (
         <div className="loading-container">
@@ -204,13 +248,13 @@ export default function App() {
           <p>{error}</p>
           <button className="settings-link" onClick={handleRefresh}>Retry</button>
         </div>
-      ) : issues.length === 0 ? (
+      ) : filteredIssues.length === 0 ? (
         <div className="empty-state">
           <p>No tasks found matching your filters.</p>
         </div>
       ) : (
         <>
-          <Dashboard issues={issues} siteUrl={siteUrl} />
+          <Dashboard issues={filteredIssues} siteUrl={siteUrl} />
           <Pagination
             page={page}
             total={total}

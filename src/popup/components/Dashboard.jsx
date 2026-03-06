@@ -2,12 +2,13 @@ import React, { useState, useMemo } from 'react';
 import TaskRow from './TaskRow.jsx';
 
 const COLUMNS = [
-  { key: 'key', label: 'Key', className: 'th-key' },
-  { key: 'summary', label: 'Summary', className: 'th-summary' },
-  { key: 'status', label: 'Status', className: 'th-status' },
-  { key: 'priority', label: 'Priority', className: 'th-priority' },
-  { key: 'type', label: 'Type', className: 'th-type' },
-  { key: 'updated', label: 'Updated', className: 'th-updated' },
+  { key: '#', label: '#', className: 'th-count', sortable: false },
+  { key: 'key', label: 'Key', className: 'th-key', sortable: true },
+  { key: 'summary', label: 'Summary', className: 'th-summary', sortable: true },
+  { key: 'status', label: 'Status', className: 'th-status', sortable: true },
+  { key: 'priority', label: 'Priority', className: 'th-priority', sortable: true },
+  { key: 'type', label: 'Type', className: 'th-type', sortable: true },
+  { key: 'updated', label: 'Updated', className: 'th-updated', sortable: true },
 ];
 
 function getSortValue(issue, columnKey) {
@@ -59,20 +60,22 @@ export default function Dashboard({ issues, siteUrl }) {
             {COLUMNS.map((col) => (
               <th
                 key={col.key}
-                className={`${col.className} th-sortable`}
-                onClick={() => handleSort(col.key)}
+                className={`${col.className}${col.sortable ? ' th-sortable' : ''}`}
+                onClick={col.sortable ? () => handleSort(col.key) : undefined}
               >
                 {col.label}
-                <span className="sort-indicator">
-                  {sortColumn === col.key ? (sortDirection === 'asc' ? ' ▲' : ' ▼') : ''}
-                </span>
+                {col.sortable && (
+                  <span className="sort-indicator">
+                    {sortColumn === col.key ? (sortDirection === 'asc' ? ' ▲' : ' ▼') : ''}
+                  </span>
+                )}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {sortedIssues.map((issue) => (
-            <TaskRow key={issue.id} issue={issue} siteUrl={siteUrl} />
+          {sortedIssues.map((issue, index) => (
+            <TaskRow key={issue.id} issue={issue} siteUrl={siteUrl} rowNum={index + 1} />
           ))}
         </tbody>
       </table>
