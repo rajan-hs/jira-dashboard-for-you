@@ -188,6 +188,13 @@ body {
   color: #de350b;
 }
 
+.settings-hint {
+  display: block;
+  font-size: 11px;
+  color: #97a0af;
+  margin-top: 2px;
+}
+
 .settings-divider {
   border-top: 1px solid #dfe1e6;
   margin: 12px 0;
@@ -750,6 +757,10 @@ body.dark .settings-input {
 
 body.dark .settings-input:focus {
   border-color: #4c9aff;
+}
+
+body.dark .settings-hint {
+  color: #6b778c;
 }
 
 body.dark .settings-divider {

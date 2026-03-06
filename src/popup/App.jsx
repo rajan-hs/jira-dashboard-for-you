@@ -135,6 +135,7 @@ export default function App() {
   const [siteUrl, setSiteUrl] = useState('');
   const [darkMode, setDarkMode] = useState(false);
   const [hiddenStatuses, setHiddenStatuses] = useState(DEFAULT_HIDDEN);
+  const [autoRedirect, setAutoRedirect] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -173,6 +174,7 @@ export default function App() {
     if (prefs.hiddenStatuses !== undefined) {
       setHiddenStatuses(prefs.hiddenStatuses);
     }
+    if (prefs.autoRedirect !== undefined) setAutoRedirect(prefs.autoRedirect);
 
     loadTasks({}, 0);
   }, [loadTasks]);
@@ -184,9 +186,11 @@ export default function App() {
   const handlePreferencesChange = async (changes) => {
     const newDark = changes.darkMode !== undefined ? changes.darkMode : darkMode;
     const newHidden = changes.hiddenStatuses !== undefined ? changes.hiddenStatuses : hiddenStatuses;
+    const newRedirect = changes.autoRedirect !== undefined ? changes.autoRedirect : autoRedirect;
     if (changes.darkMode !== undefined) setDarkMode(changes.darkMode);
     if (changes.hiddenStatuses !== undefined) setHiddenStatuses(changes.hiddenStatuses);
-    await savePreferences({ darkMode: newDark, hiddenStatuses: newHidden });
+    if (changes.autoRedirect !== undefined) setAutoRedirect(changes.autoRedirect);
+    await savePreferences({ darkMode: newDark, hiddenStatuses: newHidden, autoRedirect: newRedirect });
   };
 
   const getFilteredIssues = () => {
@@ -236,6 +240,7 @@ export default function App() {
         onLogout={handleLogout}
         darkMode={darkMode}
         hiddenStatuses={hiddenStatuses}
+        autoRedirect={autoRedirect}
         onPreferencesChange={handlePreferencesChange}
       />
       <FilterBar filters={filters} onChange={handleFilterChange} />

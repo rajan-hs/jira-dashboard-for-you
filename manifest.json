@@ -3,7 +3,7 @@
   "name": "Jira Task Dashboard",
   "version": "1.0.0",
   "description": "View and filter your Jira tasks from a popup dashboard",
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "host_permissions": ["https://*.atlassian.net/*"],
   "action": {
     "default_icon": {

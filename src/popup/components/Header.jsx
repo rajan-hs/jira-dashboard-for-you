@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, onPreferencesChange }) {
+export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, autoRedirect, onPreferencesChange }) {
   const [showSettings, setShowSettings] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [statusInput, setStatusInput] = useState('');
@@ -102,6 +102,20 @@ export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, 
                       ))}
                     </div>
                   )}
+                </div>
+                <div className="settings-section-row">
+                  <div>
+                    <label className="settings-label" style={{ margin: 0 }}>Auto Redirect</label>
+                    <span className="settings-hint">Redirect Jira "For You" page here</span>
+                  </div>
+                  <label className="toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={autoRedirect || false}
+                      onChange={(e) => onPreferencesChange({ autoRedirect: e.target.checked })}
+                    />
+                    <span className="toggle-slider"></span>
+                  </label>
                 </div>
                 <div className="settings-divider"></div>
                 <button className="settings-logout" onClick={() => setShowConfirm(true)}>
