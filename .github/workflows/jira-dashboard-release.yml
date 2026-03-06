@@ -1,0 +1,75 @@
+name: Jira Dashboard Release
+
+on:
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  release:
+    if: >-
+      github.event.label.name == 'release' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build extension
+        run: npm run build
+
+      - name: Minify JS
+        run: |
+          find dist -type f -name '*.js' -print0 | \
+            xargs -0 -I{} npx --yes terser {} -c -m -o {}
+
+      - name: Minify CSS
+        run: |
+          find dist -type f -name '*.css' -print0 | \
+            xargs -0 -I{} npx --yes clean-css-cli -o {} {}
+
+      - name: Minify HTML
+        run: |
+          find dist -type f -name '*.html' -print0 | \
+            xargs -0 -I{} npx --yes html-minifier-terser \
+              --collapse-whitespace \
+              --remove-comments \
+              --remove-redundant-attributes \
+              --remove-script-type-attributes \
+              --remove-style-link-type-attributes \
+              --minify-css true \
+              --minify-js true \
+              -o {} {}
+
+      - name: Read manifest version
+        id: manifest
+        run: |
+          node -e "const m=require('./dist/manifest.json'); console.log('version='+m.version); console.log('name='+m.name);" >> "$GITHUB_OUTPUT"
+
+      - name: Create release zip
+        run: |
+          zip -r "jira-dashboard-extension-${{ steps.manifest.outputs.version }}.zip" dist
+
+      - name: Create GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ steps.manifest.outputs.version }}
+          name: ${{ steps.manifest.outputs.name }} v${{ steps.manifest.outputs.version }}
+          commit: ${{ github.event.pull_request.head.sha }}
+          artifacts: jira-dashboard-extension-${{ steps.manifest.outputs.version }}.zip
+          allowUpdates: true
+          artifactErrorsFailBuild: true
