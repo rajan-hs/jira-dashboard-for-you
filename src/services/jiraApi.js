@@ -55,6 +55,23 @@ export async function fetchMyTasks(filters = {}, page = 0) {
   };
 }
 
+export async function searchUsers(query) {
+  const { siteUrl, email, apiToken } = await getSettings();
+  if (!siteUrl || !email || !apiToken) {
+    throw new Error('Jira credentials not configured.');
+  }
+  const baseUrl = normalizeSiteUrl(siteUrl);
+  const params = new URLSearchParams({ query, maxResults: '10' });
+  const res = await fetch(`${baseUrl}/rest/api/3/user/search?${params}`, {
+    headers: getAuthHeaders(email, apiToken),
+  });
+  if (!res.ok) {
+    throw new Error(`User search failed: ${res.status}`);
+  }
+  const users = await res.json();
+  return users.filter((u) => u.active);
+}
+
 export async function testConnection() {
   const { siteUrl, email, apiToken } = await getSettings();
   if (!siteUrl || !email || !apiToken) {

@@ -1,0 +1,23 @@
+.jira-ext-nav-btn {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ds-text, #172b4d);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.jira-ext-nav-btn:hover {
+  background: var(--ds-background-neutral-hovered, rgba(9, 30, 66, 0.08));
+}
+
+.jira-ext-nav-btn:active {
+  background: var(--ds-background-neutral-pressed, rgba(9, 30, 66, 0.13));
+}
