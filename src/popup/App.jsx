@@ -4,7 +4,7 @@ import Header from './components/Header.jsx';
 import FilterBar from './components/FilterBar.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import Pagination from './components/Pagination.jsx';
-import { fetchMyTasks, testConnection } from '../services/jiraApi.js';
+import { fetchMyTasks, searchUsers, testConnection } from '../services/jiraApi.js';
 import { getSettings, saveSettings, clearSettings, getPreferences, savePreferences } from '../services/storage.js';
 
 function OnboardingForm({ onComplete }) {
@@ -135,6 +135,7 @@ export default function App() {
   const [siteUrl, setSiteUrl] = useState('');
   const [darkMode, setDarkMode] = useState(false);
   const [hiddenStatuses, setHiddenStatuses] = useState(DEFAULT_HIDDEN);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     if (darkMode) {
@@ -197,19 +198,31 @@ export default function App() {
     });
   };
 
+  const buildFiltersWithUser = (baseFilters, user) => {
+    const f = { ...baseFilters };
+    if (user) f.assigneeAccountId = user.accountId;
+    return f;
+  };
+
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
     setPage(0);
-    loadTasks(newFilters, 0);
+    loadTasks(buildFiltersWithUser(newFilters, selectedUser), 0);
   };
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
-    loadTasks(filters, newPage);
+    loadTasks(buildFiltersWithUser(filters, selectedUser), newPage);
   };
 
   const handleRefresh = () => {
-    loadTasks(filters, page);
+    loadTasks(buildFiltersWithUser(filters, selectedUser), page);
+  };
+
+  const handleUserChange = (user) => {
+    setSelectedUser(user);
+    setPage(0);
+    loadTasks(buildFiltersWithUser(filters, user), 0);
   };
 
   const handleLogout = async () => {
@@ -236,6 +249,8 @@ export default function App() {
         darkMode={darkMode}
         hiddenStatuses={hiddenStatuses}
         onPreferencesChange={handlePreferencesChange}
+        selectedUser={selectedUser}
+        onUserChange={handleUserChange}
       />
       <FilterBar filters={filters} onChange={handleFilterChange} />
       {loading ? (

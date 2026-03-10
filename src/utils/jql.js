@@ -1,5 +1,8 @@
-export function buildJql({ searchText } = {}) {
-  const clauses = ['assignee = currentUser()'];
+export function buildJql({ searchText, assigneeAccountId } = {}) {
+  const assigneeClause = assigneeAccountId
+    ? `assignee = "${assigneeAccountId}"`
+    : 'assignee = currentUser()';
+  const clauses = [assigneeClause];
 
   if (searchText) {
     clauses.push(`summary ~ "${searchText}"`);

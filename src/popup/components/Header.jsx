@@ -1,11 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { searchUsers } from '../../services/jiraApi.js';
 
-export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, onPreferencesChange }) {
+export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, onPreferencesChange, selectedUser, onUserChange }) {
   const [showSettings, setShowSettings] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [statusInput, setStatusInput] = useState('');
+  const [showUserSearch, setShowUserSearch] = useState(false);
+  const [userQuery, setUserQuery] = useState('');
+  const [userResults, setUserResults] = useState([]);
+  const [userSearching, setUserSearching] = useState(false);
   const panelRef = useRef(null);
   const gearRef = useRef(null);
+  const userSearchRef = useRef(null);
+  const userSearchTimeout = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -18,10 +25,50 @@ export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, 
       ) {
         setShowSettings(false);
       }
+      if (
+        showUserSearch &&
+        userSearchRef.current &&
+        !userSearchRef.current.contains(e.target)
+      ) {
+        setShowUserSearch(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [showSettings]);
+  }, [showSettings, showUserSearch]);
+
+  const handleUserQuery = (e) => {
+    const q = e.target.value;
+    setUserQuery(q);
+    if (userSearchTimeout.current) clearTimeout(userSearchTimeout.current);
+    if (!q.trim()) {
+      setUserResults([]);
+      return;
+    }
+    userSearchTimeout.current = setTimeout(async () => {
+      setUserSearching(true);
+      try {
+        const results = await searchUsers(q.trim());
+        setUserResults(results);
+      } catch {
+        setUserResults([]);
+      }
+      setUserSearching(false);
+    }, 400);
+  };
+
+  const handleSelectUser = (user) => {
+    onUserChange(user);
+    setShowUserSearch(false);
+    setUserQuery('');
+    setUserResults([]);
+  };
+
+  const handleClearUser = () => {
+    onUserChange(null);
+    setUserQuery('');
+    setUserResults([]);
+  };
 
   const handleAddStatus = (e) => {
     if (e.key === 'Enter' && statusInput.trim()) {
@@ -45,6 +92,8 @@ export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, 
     onLogout();
   };
 
+  const title = selectedUser ? `${selectedUser.displayName}'s Tasks` : 'My Jira Tasks';
+
   return (
     <>
       <div className="header">
@@ -54,9 +103,65 @@ export default function Header({ onRefresh, onLogout, darkMode, hiddenStatuses, 
             <path d="M11.571.098L.07 11.598a.24.24 0 000 .339l5.49 5.49 6.011-6.011L5.56 5.405 11.571.098z" opacity=".4"/>
             <path d="M17.583 5.926l-6.012 6.011 6.012 6.012 5.49-5.49a.24.24 0 000-.34l-5.49-5.49-.001-.703z" opacity=".4"/>
           </svg>
-          <h1 className="header-title">My Jira Tasks</h1>
+          <h1 className="header-title">{title}</h1>
+          {selectedUser && (
+            <button className="btn-back-to-my" onClick={handleClearUser} title="Back to my tasks">
+              &times;
+            </button>
+          )}
         </div>
         <div className="header-actions">
+          <div style={{ position: 'relative' }} ref={userSearchRef}>
+            <button
+              className="btn-icon"
+              onClick={() => setShowUserSearch(!showUserSearch)}
+              aria-label="Search user"
+              title="View another user's tasks"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </button>
+            {showUserSearch && (
+              <div className="user-search-panel">
+                <input
+                  className="user-search-input"
+                  type="text"
+                  placeholder="Search by name or email..."
+                  value={userQuery}
+                  onChange={handleUserQuery}
+                  autoFocus
+                />
+                {userSearching && (
+                  <div className="user-search-loading">Searching...</div>
+                )}
+                {userResults.length > 0 && (
+                  <div className="user-search-results">
+                    {userResults.map((user) => (
+                      <button
+                        key={user.accountId}
+                        className="user-search-item"
+                        onClick={() => handleSelectUser(user)}
+                      >
+                        <img
+                          className="user-avatar"
+                          src={user.avatarUrls?.['24x24'] || user.avatarUrls?.['16x16']}
+                          alt=""
+                          width="24"
+                          height="24"
+                        />
+                        <span className="user-name">{user.displayName}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {!userSearching && userQuery.trim() && userResults.length === 0 && (
+                  <div className="user-search-empty">No users found</div>
+                )}
+              </div>
+            )}
+          </div>
           <button className="btn-icon" onClick={onRefresh} aria-label="Refresh">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M11 2L13 3.99545L12.9408 4.05474M13 18.0001L11 19.9108L11.0297 19.9417M12.9408 4.05474L11 6M12.9408 4.05474C12.6323 4.01859 12.3183 4 12 4C7.58172 4 4 7.58172 4 12C4 14.5264 5.17107 16.7793 7 18.2454M17 5.75463C18.8289 7.22075 20 9.47362 20 12C20 16.4183 16.4183 20 12 20C11.6716 20 11.3477 19.9802 11.0297 19.9417M13 22.0001L11.0297 19.9417"/>
