@@ -1,14 +1,21 @@
-chrome.action.onClicked.addListener(() => {
-  chrome.tabs.create({ url: chrome.runtime.getURL('src/popup/index.html') });
-});
+const DASHBOARD_PATH = 'src/popup/index.html';
 
-// Auto-redirect Jira "For You" page to extension dashboard
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (changeInfo.url && /^https:\/\/[^/]+\.atlassian\.net\/jira\/for-you/.test(changeInfo.url)) {
-    chrome.storage.sync.get(['autoRedirect'], (result) => {
-      if (result.autoRedirect) {
-        chrome.tabs.update(tabId, { url: chrome.runtime.getURL('src/popup/index.html') });
-      }
-    });
+function openDashboard() {
+  const dashboardUrl = chrome.runtime.getURL(DASHBOARD_PATH);
+  chrome.tabs.query({ url: dashboardUrl }, (tabs) => {
+    if (tabs.length > 0) {
+      chrome.tabs.update(tabs[0].id, { active: true });
+      chrome.windows.update(tabs[0].windowId, { focused: true });
+    } else {
+      chrome.tabs.create({ url: dashboardUrl });
+    }
+  });
+}
+
+chrome.action.onClicked.addListener(openDashboard);
+
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.action === 'openDashboard') {
+    openDashboard();
   }
 });

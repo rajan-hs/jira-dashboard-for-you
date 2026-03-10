@@ -11,6 +11,8 @@ export default defineConfig({
       closeBundle() {
         cpSync('manifest.json', 'dist/manifest.json');
         cpSync('public/background.js', 'dist/background.js');
+        cpSync('content.js', 'dist/content.js');
+        cpSync('content.css', 'dist/content.css');
         cpSync('public/icons', 'dist/icons', { recursive: true });
       },
     },

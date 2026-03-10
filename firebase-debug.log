@@ -1,0 +1,201 @@
+[debug] [2026-03-10T06:03:37.068Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:37.070Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)
+[debug] [2026-03-10T06:03:37.070Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:37.070Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)
+[debug] [2026-03-10T06:03:37.071Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.071Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.071Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.071Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.071Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:37.071Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)
+[debug] [2026-03-10T06:03:37.071Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.071Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.072Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo [none]
+[debug] [2026-03-10T06:03:37.087Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo [none]
+[debug] [2026-03-10T06:03:37.088Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo [none]
+[debug] [2026-03-10T06:03:37.452Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo 200
+[debug] [2026-03-10T06:03:37.453Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo {"name":"projects/ios-hotstar/billingInfo","projectId":"ios-hotstar","billingAccountName":"billingAccounts/01A53F-D31A9D-7E841A","billingEnabled":true}
+[debug] [2026-03-10T06:03:37.462Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.462Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.463Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.464Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.464Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.472Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.472Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.472Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.472Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:37.472Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.472Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.473Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.473Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.474Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.474Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.475Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.475Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.475Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.475Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.476Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.476Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.476Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.477Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.477Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-03-10T06:03:37.477Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:37.478Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com [none]
+[debug] [2026-03-10T06:03:37.478Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.477Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo 200
+[debug] [2026-03-10T06:03:38.477Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo {"name":"projects/ios-hotstar/billingInfo","projectId":"ios-hotstar","billingAccountName":"billingAccounts/01A53F-D31A9D-7E841A","billingEnabled":true}
+[debug] [2026-03-10T06:03:38.479Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.479Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.479Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.479Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.480Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.485Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.485Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.485Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.485Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.485Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.485Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.487Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.487Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.488Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.488Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.489Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.489Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.490Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.490Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.490Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.490Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.491Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.491Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.492Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.492Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.493Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com [none]
+[debug] [2026-03-10T06:03:38.493Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.535Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo 200
+[debug] [2026-03-10T06:03:38.535Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo {"name":"projects/ios-hotstar/billingInfo","projectId":"ios-hotstar","billingAccountName":"billingAccounts/01A53F-D31A9D-7E841A","billingEnabled":true}
+[debug] [2026-03-10T06:03:38.535Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.535Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.535Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.535Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.535Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.535Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.536Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.538Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.538Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.538Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.538Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:38.538Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.538Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.539Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.539Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.540Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.540Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.540Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.540Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.541Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.541Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.541Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.541Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.542Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.542Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.543Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-03-10T06:03:38.543Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:38.543Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com [none]
+[debug] [2026-03-10T06:03:38.543Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com  x-goog-user-project=ios-hotstar
+[debug] [2026-03-10T06:03:39.198Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com 403
+[debug] [2026-03-10T06:03:39.198Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com [omitted]
+[debug] [2026-03-10T06:03:39.199Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com 403
+[debug] [2026-03-10T06:03:39.199Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:39.290Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com 403
+[debug] [2026-03-10T06:03:39.290Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:39.294Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com 403
+[debug] [2026-03-10T06:03:39.294Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:39.300Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com 403
+[debug] [2026-03-10T06:03:39.300Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:39.307Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com 403
+[debug] [2026-03-10T06:03:39.307Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:39.309Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com 403
+[debug] [2026-03-10T06:03:39.309Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:39.356Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com 403
+[debug] [2026-03-10T06:03:39.356Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.172Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com 403
+[debug] [2026-03-10T06:03:40.172Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.174Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com 403
+[debug] [2026-03-10T06:03:40.174Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.183Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com 403
+[debug] [2026-03-10T06:03:40.184Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.187Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com 403
+[debug] [2026-03-10T06:03:40.188Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.199Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com 403
+[debug] [2026-03-10T06:03:40.200Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.247Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com 403
+[debug] [2026-03-10T06:03:40.247Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.256Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com 403
+[debug] [2026-03-10T06:03:40.256Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.268Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com 403
+[debug] [2026-03-10T06:03:40.268Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/fcm.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.291Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com 403
+[debug] [2026-03-10T06:03:40.291Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.293Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com 403
+[debug] [2026-03-10T06:03:40.294Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.299Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com 403
+[debug] [2026-03-10T06:03:40.299Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firestore.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.302Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com 403
+[debug] [2026-03-10T06:03:40.302Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.315Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com 403
+[debug] [2026-03-10T06:03:40.316Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com [omitted]
+[debug] [2026-03-10T06:03:40.349Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com 403
+[debug] [2026-03-10T06:03:40.350Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.361Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com 403
+[debug] [2026-03-10T06:03:40.361Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.409Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com 403
+[debug] [2026-03-10T06:03:40.409Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/storage.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.419Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com 403
+[debug] [2026-03-10T06:03:40.419Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseio.com [omitted]
+[debug] [2026-03-10T06:03:40.423Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:40.424Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)
+[debug] [2026-03-10T06:03:40.424Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:40.424Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:40.424Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo [none]
+[debug] [2026-03-10T06:03:40.458Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com 403
+[debug] [2026-03-10T06:03:40.458Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:40.461Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:40.461Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)
+[debug] [2026-03-10T06:03:40.461Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:40.461Z] Checked if tokens are valid: true, expires at: 1773123815323
+[debug] [2026-03-10T06:03:40.462Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo [none]
+[debug] [2026-03-10T06:03:40.653Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com 403
+[debug] [2026-03-10T06:03:40.654Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ios-hotstar/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-03-10T06:03:41.803Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo 200
+[debug] [2026-03-10T06:03:41.803Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo {"name":"projects/ios-hotstar/billingInfo","projectId":"ios-hotstar","billingAccountName":"billingAccounts/01A53F-D31A9D-7E841A","billingEnabled":true}
+[debug] [2026-03-10T06:03:41.804Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:41.804Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)
+[debug] [2026-03-10T06:03:41.840Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo 200
+[debug] [2026-03-10T06:03:41.841Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ios-hotstar/billingInfo {"name":"projects/ios-hotstar/billingInfo","projectId":"ios-hotstar","billingAccountName":"billingAccounts/01A53F-D31A9D-7E841A","billingEnabled":true}
+[debug] [2026-03-10T06:03:41.841Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-10T06:03:41.841Z] > authorizing via signed-in user (rajan.panchal@jiostar.com)

@@ -37,12 +37,12 @@ export async function getPreferences() {
     return JSON.parse(localStorage.getItem('jira-prefs') || '{}');
   }
   return new Promise((resolve) => {
-    storage.get(['darkMode', 'hiddenStatuses', 'autoRedirect'], resolve);
+    storage.get(['darkMode', 'hiddenStatuses'], resolve);
   });
 }
 
-export async function savePreferences({ darkMode, hiddenStatuses, autoRedirect }) {
-  const data = { darkMode, hiddenStatuses, autoRedirect };
+export async function savePreferences({ darkMode, hiddenStatuses }) {
+  const data = { darkMode, hiddenStatuses };
   if (!storage) {
     localStorage.setItem('jira-prefs', JSON.stringify(data));
     return;
